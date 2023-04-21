@@ -1,7 +1,9 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Field } from 'formik';
 import { nanoid } from 'nanoid';
 import * as yup from 'yup';
 import { PropTypes } from 'prop-types';
+import { FormField, Form, ErrorMessage,ButtonWrapForm } from './ContactForm.styled';
+
 
 
 const contactSchema = yup.object().shape({
@@ -35,7 +37,7 @@ export const ContactForm = ({ onSave }) => {
       }}
     >
       <Form autoComplete="off">
-        <label>
+        <FormField>
           Name
           <Field
             name="name"
@@ -44,8 +46,8 @@ export const ContactForm = ({ onSave }) => {
             required
           />
           <ErrorMessage name="name" component="div" />
-        </label>
-        <label>
+        </FormField>
+        <FormField>
           Number
           <Field
             type="tel"
@@ -55,8 +57,8 @@ export const ContactForm = ({ onSave }) => {
             required
           />
           <ErrorMessage name="number" component="div" />
-        </label>
-        <button type="submit">Add contact</button>
+        </FormField>
+        <ButtonWrapForm type="submit">Add contact</ButtonWrapForm>
       </Form>
     </Formik>
   );

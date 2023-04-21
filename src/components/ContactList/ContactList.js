@@ -1,18 +1,20 @@
 import { PropTypes } from 'prop-types';
+import { ListWrap, ButtonWrap } from './ContactList.styled';
+
 
 export const ContactList = ({ contacts, onDelete }) => {
   console.log(contacts);
   return (
-    <ul>
+    <ListWrap>
       {contacts.map(contact => (
         <li key={contact.id}>
-          {contact.name} {contact.number}
-          <button type="button" onClick={() => onDelete(contact.id)}>
+          {contact.name}: {contact.number}
+          <ButtonWrap type="button" onClick={() => onDelete(contact.id)}>
             Delete
-          </button>
+          </ButtonWrap>
         </li>
       ))}
-    </ul>
+    </ListWrap>
   );
 };
 

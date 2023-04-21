@@ -1,8 +1,9 @@
 import { PropTypes } from "prop-types";
+import { FilterWrap } from './Filter.styled';
 
 export const Filter = ({ filter, onChange }) => {
     return (
-      <div>
+      <FilterWrap>
         <label> Find contacts by name</label>
         <input
           type="text"
@@ -11,7 +12,7 @@ export const Filter = ({ filter, onChange }) => {
           onChange={onChange}
           placeholder="search"
         />
-      </div>
+      </FilterWrap>
     );
 };
 
