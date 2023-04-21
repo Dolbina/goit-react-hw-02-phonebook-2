@@ -54,7 +54,7 @@ export class App extends Component {
   };
 
   render() {
-    const { contacts, name, filter } = this.state;
+    const { filter } = this.state;
 
     return (
       <div>
